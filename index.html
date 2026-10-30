@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Scam Drill</title>
+<meta name="description" content="Practise spotting Indian digital-payment scams in a safe phone simulator, then check any suspicious message in seconds.">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20rx='7'%20fill='%230E1726'/%3E%3Crect%20x='6'%20y='15'%20width='20'%20height='7'%20rx='2'%20fill='%23FFE14D'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<header class="topbar">
+  <div class="topbar__inner wrap">
+    <a class="wordmark" href="#home" aria-label="Scam Drill, home">Scam <span class="wordmark__mark">Drill</span></a>
+
+    <nav class="topnav" aria-label="Main">
+      <a class="topnav__link" href="#home" data-nav="home">Home</a>
+      <a class="topnav__link" href="#drill" data-nav="drill">Drill</a>
+      <a class="topnav__link" href="#checker" data-nav="checker">Checker</a>
+      <a class="topnav__link" href="#learn" data-nav="learn">Learn</a>
+      <a class="topnav__link" href="#help" data-nav="help">Help</a>
+    </nav>
+
+    <button class="icon-btn" id="theme-toggle" type="button" aria-label="Switch to dark theme">
+      <span class="icon-btn__glyph" aria-hidden="true"></span>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+
+  <section id="view-home" class="view" hidden>
+    <div class="wrap">
+      <div class="hero">
+        <div class="hero__text">
+          <p class="eyebrow">Digital payment fraud practice</p>
+          <h1 class="display-xl">Can you tell a real message from a trap?</h1>
+          <p class="lede">Practise real-world UPI, OTP and KYC scams in a safe phone simulator, then check any suspicious message in seconds. Nothing you type leaves your device.</p>
+          <div class="btn-row">
+            <a class="btn btn--primary" href="#drill">Start the drill</a>
+            <a class="btn btn--secondary" href="#checker">Check a message</a>
+          </div>
+          <p class="body-small muted">Takes about 5 minutes. No sign-up.</p>
+        </div>
+        <div class="hero__phone" id="home-phone"></div>
+      </div>
+    </div>
+
+    <div class="wrap how">
+      <h2 class="h2">How it works</h2>
+      <div class="how__grid">
+        <div class="how__item">
+          <div class="how__meta">
+            <span class="how__num">01</span>
+            <span class="how__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M10 8.5 16 12l-6 3.5Z"/></svg>
+            </span>
+          </div>
+          <h3>Play the drill</h3>
+          <p>Ten situations in a fake phone. Choose what you would really do and see the trick marked in yellow.</p>
+        </div>
+        <div class="how__item">
+          <div class="how__meta">
+            <span class="how__num">02</span>
+            <span class="how__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="6.5"/><path d="m15.8 15.8 4.2 4.2"/></svg>
+            </span>
+          </div>
+          <h3>Check any message</h3>
+          <p>Paste a suspicious SMS or WhatsApp message. Get a risk score and the phrases that gave it away.</p>
+        </div>
+        <div class="how__item">
+          <div class="how__meta">
+            <span class="how__num">03</span>
+            <span class="how__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.2 20 6v5.4c0 4.4-3.2 7.7-8 9.4-4.8-1.7-8-5-8-9.4V6Z"/><path d="m8.6 12.2 2.3 2.3 4.5-4.5"/></svg>
+            </span>
+          </div>
+          <h3>Know what to do if it happens</h3>
+          <p>Six steps, the 1930 helpline and the rights you have when money has already moved.</p>
+        </div>
+      </div>
+    </div>
+
+    <section class="band" aria-label="The one UPI rule">
+      <div class="wrap">
+        <p class="band__quote">"A PIN means money goes out. You never need one to receive."</p>
+        <p class="band__caption">The one UPI rule worth remembering.</p>
+      </div>
+    </section>
+
+    <div class="wrap">
+      <footer class="site-footer">
+        <p>Educational project. Not legal or financial advice. Verify rules on <a href="https://www.rbi.org.in" target="_blank" rel="noopener noreferrer">rbi.org.in</a>.</p>
+      </footer>
+    </div>
+  </section>
+
+  <section id="view-drill" class="view" hidden>
+    <div class="wrap" id="drill-root"></div>
+  </section>
+
+  <section id="view-checker" class="view" hidden>
+    <div class="wrap" id="checker-root"></div>
+  </section>
+
+  <section id="view-learn" class="view" hidden>
+    <div class="wrap" id="learn-root"></div>
+  </section>
+
+  <section id="view-help" class="view" hidden>
+    <div class="wrap" id="help-root"></div>
+  </section>
+
+</main>
+
+<nav class="tabbar" aria-label="Main, mobile">
+  <a class="tabbar__link" href="#home" data-nav="home">
+    <span class="tabbar__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 10.6 12 3.6l8.5 7"/><path d="M5.7 9.6V19a1 1 0 0 0 1 1h10.6a1 1 0 0 0 1-1V9.6"/></svg></span>
+    <span class="tabbar__label">Home</span>
+  </a>
+  <a class="tabbar__link" href="#drill" data-nav="drill">
+    <span class="tabbar__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.2"/><circle cx="12" cy="12" r="3"/></svg></span>
+    <span class="tabbar__label">Drill</span>
+  </a>
+  <a class="tabbar__link" href="#checker" data-nav="checker">
+    <span class="tabbar__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="6.5"/><path d="m15.8 15.8 4.2 4.2"/></svg></span>
+    <span class="tabbar__label">Checker</span>
+  </a>
+  <a class="tabbar__link" href="#learn" data-nav="learn">
+    <span class="tabbar__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6.6C10 4.9 7 4.5 4 5.1v13c3-.6 6-.2 8 1.5 2-1.7 5-2.1 8-1.5v-13c-3-.6-6-.2-8 1.5Z"/><path d="M12 6.6v13"/></svg></span>
+    <span class="tabbar__label">Learn</span>
+  </a>
+  <a class="tabbar__link" href="#help" data-nav="help">
+    <span class="tabbar__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6.1 3.6h3l1.5 3.9-2 1.4a12.4 12.4 0 0 0 6.5 6.5l1.4-2 3.9 1.5v3a2 2 0 0 1-2.2 2A17.2 17.2 0 0 1 4.1 5.8a2 2 0 0 1 2-2.2Z"/></svg></span>
+    <span class="tabbar__label">Help</span>
+  </a>
+</nav>
+
+<noscript>
+  <div class="wrap noscript">
+    <p><strong>Scam Drill needs JavaScript.</strong> Turn it on in your browser, then reload this page.</p>
+  </div>
+</noscript>
+
+<script src="data/scenarios.js" defer></script>
+<script src="data/checker-rules.js" defer></script>
+<script src="data/learn-data.js" defer></script>
+<script src="js/app.js" defer></script>
+<script src="js/game.js" defer></script>
+<script src="js/checker-ui.js" defer></script>
+<script src="js/help-learn.js" defer></script>
+</body>
+</html>
